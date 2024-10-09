@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 10px;
+    margin: 0;
+}
+
+.bloco {
+    margin-bottom: 20px;
+}
+
+#bloco1, #bloco2, #bloco3 {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+#pizza-list, #cart-items {
+    list-style-type: none;
+    padding: 0;
+}
+#pizza-image {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+#pizza-list li, #cart-items li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+input[type="number"] {
+    width: 50px;
+    margin-right: 10px;
+}
+
+button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+#bloco4 {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #f9f9f9;
+    margin-top: 20px;
+}
