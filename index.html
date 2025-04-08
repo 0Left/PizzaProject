@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cardápio de Pizzaria</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -27,28 +30,32 @@
         <button id="back-to-list">Voltar</button>
     </div>
     
-
     <!-- Bloco 3 - Carrinho -->
     <div id="bloco3" class="bloco hidden">
         <h2>Carrinho</h2>
         <ul id="cart-items">
             <!-- Pizzas adicionadas ao carrinho serão inseridas aqui -->
         </ul>
-        <button id="clear-cart">Limpar carrinho</button>
-        <button id="place-order">Enviar pedido</button>
-        <button id="back-to-list2">Voltar</button>
+        <div class="cart-actions">
+            <button id="clear-cart">Limpar carrinho</button>
+            <button id="place-order">Enviar pedido</button>
+            <button id="back-to-list2">Voltar</button>
+        </div>
+        
+        <div class="delivery-address">
+            <h3>Endereço de Entrega</h3>
+            <form id="addressForm">
+                <label for="address">Endereço:</label>
+                <input type="text" id="address" name="address" required>
+                <button type="submit">Salvar</button>
+            </form>
+            <div class="saved-address">
+                <h4>Endereço Salvo:</h4>
+                <p id="savedAddress"></p>
+            </div>
+        </div>
     </div>
-    <!-- Bloco 4 - Salvar Endereço -->
-    <div id="bloco4" class="bloco">
-        <h2>Salvar Endereço de Entrega</h2>
-        <form id="addressForm">
-            <label for="address">Endereço:</label>
-            <input type="text" id="address" name="address" required>
-            <button type="submit">Salvar</button>
-        </form>
-        <h3>Endereço Salvo:</h3>
-        <p id="savedAddress"></p>
-    </div>
+
     <script src="script.js"></script>
     <script src="cookieDeal.js"></script>
 </body>

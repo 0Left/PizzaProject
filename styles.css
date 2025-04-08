@@ -1,52 +1,230 @@
+/* Global Styles */
+:root {
+    --primary-dark: #1a1a1a;
+    --secondary-dark: #2d2d2d;
+    --accent-gold: #d4af37;
+    --text-light: #ffffff;
+    --text-gray: #cccccc;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    padding: 10px;
     margin: 0;
-}
-
-.bloco {
-    margin-bottom: 20px;
-}
-
-#bloco1, #bloco2, #bloco3 {
-    border: 1px solid #ccc;
-    padding: 20px;
-    background-color: #f9f9f9;
-}
-
-#pizza-list, #cart-items {
-    list-style-type: none;
     padding: 0;
-}
-#pizza-image {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
+    font-family: 'Playfair Display', serif;
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+    line-height: 1.6;
 }
 
-#pizza-list li, #cart-items li {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
+/* Typography */
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin: 1em 0;
+    border-bottom: 2px solid var(--accent-gold);
+    padding-bottom: 0.5em;
+}
+
+h3 {
+    font-size: 1.5em;
+    margin: 1.5em 0 1em;
+    border-bottom: 1px solid var(--accent-gold);
+    padding-bottom: 0.3em;
+}
+
+h4 {
+    font-size: 1.2em;
+    margin: 1em 0 0.5em;
+}
+
+/* Blocks */
+.bloco {
+    background-color: var(--secondary-dark);
+    border-radius: 8px;
+    padding: 2em;
+    margin: 2em auto;
+    max-width: 1200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--accent-gold);
+}
+
+/* Pizza List */
+#pizza-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2em;
+}
+
+#pizza-list li {
+    background-color: var(--primary-dark);
+    border: 1px solid var(--accent-gold);
+    border-radius: 8px;
+    padding: 1.5em;
+    transition: transform 0.3s ease;
     cursor: pointer;
 }
 
+#pizza-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(212, 175, 55, 0.2);
+}
+
+/* Buttons */
+button {
+    background-color: var(--accent-gold);
+    color: var(--primary-dark);
+    border: none;
+    padding: 0.8em 1.5em;
+    border-radius: 4px;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #c19b2e;
+    transform: scale(1.05);
+}
+
+#open-cart {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+/* Cart Styles */
+#bloco3 {
+    max-width: 800px;
+}
+
+.cart-actions {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    margin: 2em 0;
+    flex-wrap: wrap;
+}
+
+#cart-items {
+    list-style: none;
+    padding: 0;
+}
+
+#cart-items li {
+    background-color: var(--primary-dark);
+    border: 1px solid var(--accent-gold);
+    border-radius: 4px;
+    padding: 1em;
+    margin: 1em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Delivery Address Section */
+.delivery-address {
+    background-color: var(--primary-dark);
+    border: 1px solid var(--accent-gold);
+    border-radius: 8px;
+    padding: 1.5em;
+    margin-top: 2em;
+}
+
+#addressForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: 1em 0;
+}
+
+#addressForm label {
+    color: var(--text-light);
+    font-size: 1.1em;
+}
+
+input[type="text"] {
+    padding: 0.8em;
+    border: 1px solid var(--accent-gold);
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+    border-radius: 4px;
+    font-family: 'Playfair Display', serif;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #c19b2e;
+    box-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+}
+
+.saved-address {
+    margin-top: 1.5em;
+    padding-top: 1.5em;
+    border-top: 1px solid var(--accent-gold);
+}
+
+#savedAddress {
+    color: var(--text-gray);
+    font-style: italic;
+}
+
+/* Pizza Details */
+#bloco2 {
+    text-align: center;
+}
+
+#pizza-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid var(--accent-gold);
+    margin: 1em 0;
+}
+
+#pizza-ingredients, #pizza-price {
+    color: var(--text-gray);
+    font-size: 1.1em;
+    margin: 1em 0;
+}
+
+/* Utility Classes */
 .hidden {
     display: none;
 }
 
-input[type="number"] {
-    width: 50px;
-    margin-right: 10px;
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .bloco {
+        margin: 1em;
+        padding: 1em;
+    }
 
-button {
-    margin-left: 10px;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-#bloco4 {
-    border: 1px solid #ccc;
-    padding: 20px;
-    background-color: #f9f9f9;
-    margin-top: 20px;
+    h1 {
+        font-size: 2em;
+    }
+
+    #pizza-list {
+        grid-template-columns: 1fr;
+    }
+
+    .cart-actions {
+        flex-direction: column;
+    }
+
+    .cart-actions button {
+        width: 100%;
+    }
 }
