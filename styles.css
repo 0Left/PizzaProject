@@ -184,20 +184,26 @@ input[type="text"]:focus {
 /* Pizza Details */
 #bloco2 {
     text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 #pizza-image {
-    max-width: 100%;
-    height: auto;
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
     border-radius: 8px;
     border: 2px solid var(--accent-gold);
-    margin: 1em 0;
+    margin: 1em auto;
+    display: block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 #pizza-ingredients, #pizza-price {
     color: var(--text-gray);
     font-size: 1.1em;
     margin: 1em 0;
+    padding: 0 1em;
 }
 
 /* Utility Classes */
@@ -226,5 +232,17 @@ input[type="text"]:focus {
 
     .cart-actions button {
         width: 100%;
+    }
+
+    #pizza-image {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    #pizza-image {
+        width: 250px;
+        height: 250px;
     }
 }
