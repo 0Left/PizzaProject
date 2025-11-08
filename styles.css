@@ -1,241 +1,252 @@
-/* Global Styles */
+/* Global Styles - Paleta Caverna com Roxo Suave - Design Clean */
 :root {
-    --primary-white: #ffffff;
-    --secondary-white: #f8f8f8;
-    --accent-red: #d32f2f;
-    --accent-green: #2e7d32;
-    --text-dark: #333333;
-    --text-gray: #666666;
-    --border-light: #e0e0e0;
+    --cave-dark: #1a0d2e;
+    --cave-deep: #2d1b3d;
+    --cave-medium: #3d2b4d;
+    --purple-soft: #e8d5ff;
+    --purple-light: #d4b3ff;
+    --purple-medium: #b894e6;
+    --purple-accent: #9b6fd9;
+    --text-light: #f5f0ff;
+    --text-medium: #e8d5ff;
+    --text-dark: #b894e6;
+    --border-purple: rgba(107, 76, 147, 0.3);
+    --shadow-purple: rgba(155, 111, 217, 0.2);
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    background-color: var(--primary-white);
-    color: var(--text-dark);
-    line-height: 1.6;
+    background: linear-gradient(135deg, var(--cave-dark) 0%, var(--cave-deep) 50%, var(--cave-medium) 100%);
+    background-attachment: fixed;
+    color: var(--text-light);
+    line-height: 1.7;
+    min-height: 100vh;
 }
 
-/* Typography */
-h1, h2, h3, h4 {
+/* Header */
+.header {
+    text-align: center;
+    padding: 4em 2em 3em;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
     font-family: 'Playfair Display', serif;
-    color: var(--accent-red);
+    font-size: 3em;
+    color: var(--purple-light);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 0 0 0.5em 0;
+    font-weight: 400;
+}
+
+.subtitle {
+    color: var(--text-medium);
+    font-style: italic;
+    font-size: 1.1em;
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* Bloco 1 - Lista */
+#bloco1 {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2em 4em;
+}
+
+#comida-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5em;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#comida-list li {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+#comida-list li:hover {
+    transform: translateY(-5px);
+}
+
+.comida-card {
+    padding: 2em;
+    background: rgba(45, 27, 61, 0.4);
+    border: 1px solid var(--border-purple);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+#comida-list li:hover .comida-card {
+    background: rgba(61, 43, 77, 0.5);
+    border-color: var(--purple-accent);
+    box-shadow: 0 8px 24px var(--shadow-purple);
+}
+
+.comida-card h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--purple-light);
+    margin: 0 0 0.8em 0;
+    font-size: 1.5em;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 1px;
+    line-height: 1.3;
+}
+
+.comida-preview {
+    color: var(--text-medium);
+    font-size: 1em;
+    line-height: 1.6;
+    margin: 0;
+    opacity: 0.85;
+}
+
+/* Bloco 2 - Detalhes */
+#bloco2 {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3em 2em 4em;
+}
+
+.back-button {
+    background: transparent;
+    border: 1px solid var(--border-purple);
+    color: var(--purple-light);
+    padding: 0.6em 1.2em;
+    border-radius: 6px;
+    font-size: 0.9em;
+    margin-bottom: 3em;
+    text-transform: none;
+    letter-spacing: 0.5px;
+    box-shadow: none;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    background: rgba(155, 111, 217, 0.1);
+    border-color: var(--purple-accent);
+    transform: translateX(-3px);
+    box-shadow: none;
+}
+
+.comida-detail {
+    text-align: center;
+}
+
+#comida-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    color: var(--purple-light);
+    margin: 0 0 1.5em 0;
+    font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
-h1 {
-    font-size: 2.5em;
-    text-align: center;
-    margin: 1em 0;
-    border-bottom: 2px solid var(--accent-green);
-    padding-bottom: 0.5em;
-}
-
-h3 {
-    font-size: 1.5em;
-    margin: 1.5em 0 1em;
-    border-bottom: 1px solid var(--accent-green);
-    padding-bottom: 0.3em;
-}
-
-h4 {
-    font-size: 1.2em;
-    margin: 1em 0 0.5em;
-    color: var(--accent-green);
-}
-
-/* Blocks */
-.bloco {
-    background-color: var(--secondary-white);
-    border-radius: 8px;
-    padding: 2em;
-    margin: 2em auto;
-    max-width: 1200px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border: 1px solid var(--border-light);
-}
-
-/* Pizza List */
-#pizza-list {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2em;
-}
-
-#pizza-list li {
-    background-color: var(--primary-white);
-    border: 1px solid var(--border-light);
-    border-radius: 8px;
-    padding: 1.5em;
-    transition: transform 0.3s ease;
-    cursor: pointer;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-    font-size: 1.1em;
-    letter-spacing: 0.5px;
-}
-
-#pizza-list li:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-color: var(--accent-red);
-}
-
-/* Pizza Details */
-#pizza-name {
-    font-size: 2em;
-    margin-bottom: 0.5em;
-}
-
-#pizza-ingredients, #pizza-price {
-    color: var(--text-dark);
-    font-size: 1.2em;
-    margin: 1em 0;
-    padding: 0 1em;
-    font-weight: 700;
-}
-
-#pizza-price {
-    color: var(--accent-red);
-    font-size: 1.4em;
-    margin-top: 1.5em;
-}
-
-/* Buttons */
-button {
-    background-color: var(--accent-red);
-    color: var(--primary-white);
-    border: none;
-    padding: 0.8em 1.5em;
-    border-radius: 4px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    letter-spacing: 1px;
-}
-
-button:hover {
-    background-color: #b71c1c;
-    transform: scale(1.05);
-}
-
-#open-cart {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-    background-color: var(--accent-green);
-}
-
-#open-cart:hover {
-    background-color: #1b5e20;
-}
-
-/* Cart Styles */
-#bloco3 {
-    max-width: 800px;
-}
-
-.cart-actions {
-    display: flex;
-    gap: 1em;
-    justify-content: center;
-    margin: 2em 0;
-    flex-wrap: wrap;
-}
-
-#cart-items {
-    list-style: none;
-    padding: 0;
-}
-
-#cart-items li {
-    background-color: var(--primary-white);
-    border: 1px solid var(--border-light);
-    border-radius: 4px;
-    padding: 1em;
-    margin: 1em 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 700;
-    font-size: 1.1em;
-}
-
-/* Delivery Address Section */
-.delivery-address {
-    background-color: var(--primary-white);
-    border: 1px solid var(--border-light);
-    border-radius: 8px;
-    padding: 1.5em;
-    margin-top: 2em;
-}
-
-#addressForm {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    margin: 1em 0;
-}
-
-#addressForm label {
-    color: var(--text-dark);
-    font-size: 1.1em;
-}
-
-input[type="text"] {
-    padding: 0.8em;
-    border: 1px solid var(--border-light);
-    background-color: var(--primary-white);
-    color: var(--text-dark);
-    border-radius: 4px;
-    font-family: 'Playfair Display', serif;
-}
-
-input[type="text"]:focus {
-    outline: none;
-    border-color: var(--accent-green);
-    box-shadow: 0 0 5px rgba(46, 125, 50, 0.2);
-}
-
-.saved-address {
-    margin-top: 1.5em;
-    padding-top: 1.5em;
-    border-top: 1px solid var(--border-light);
-}
-
-#savedAddress {
-    color: var(--text-gray);
-    font-style: italic;
-}
-
-/* Pizza Details */
-#bloco2 {
-    text-align: center;
+#comida-image {
+    width: 100%;
     max-width: 600px;
-    margin: 0 auto;
-    background-color: var(--secondary-white);
-    border-radius: 8px;
-    padding: 2em;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-#pizza-image {
-    width: 400px;
-    height: 400px;
+    height: auto;
     object-fit: cover;
     border-radius: 8px;
-    border: 2px solid var(--accent-red);
-    margin: 1em auto;
+    margin: 0 auto 3em;
     display: block;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.comida-content {
+    text-align: left;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.descricao-section {
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 0;
+}
+
+#comida-descricao {
+    color: var(--text-light);
+    font-size: 1.15em;
+    margin: 0;
+    line-height: 1.9;
+    opacity: 0.95;
+}
+
+/* Comentários */
+.comentarios-section {
+    margin-top: 3em;
+    padding-top: 3em;
+    border-top: 1px solid var(--border-purple);
+}
+
+.comentarios-section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8em;
+    color: var(--purple-light);
+    margin: 0 0 1.5em 0;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border: none;
+    padding: 0;
+}
+
+#comentarios-list {
+    margin-top: 0;
+}
+
+.comentario-item {
+    padding: 1.5em 0;
+    border-bottom: 1px solid var(--border-purple);
+    transition: all 0.3s ease;
+}
+
+.comentario-item:last-child {
+    border-bottom: none;
+}
+
+.comentario-item:hover {
+    padding-left: 1em;
+}
+
+.comentario-texto {
+    color: var(--text-light);
+    margin: 0 0 0.5em 0;
+    line-height: 1.8;
+    font-size: 1.05em;
+}
+
+.comentario-data {
+    color: var(--text-dark);
+    font-size: 0.9em;
+    font-style: italic;
+    opacity: 0.7;
+}
+
+.sem-comentarios {
+    color: var(--text-medium);
+    font-style: italic;
+    text-align: center;
+    padding: 3em 0;
+    opacity: 0.7;
 }
 
 /* Utility Classes */
@@ -245,36 +256,64 @@ input[type="text"]:focus {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .bloco {
-        margin: 1em;
-        padding: 1em;
+    .header {
+        padding: 3em 1.5em 2em;
     }
 
     h1 {
+        font-size: 2.2em;
+        letter-spacing: 2px;
+    }
+
+    #bloco1 {
+        padding: 0 1.5em 3em;
+    }
+
+    #comida-list {
+        grid-template-columns: 1fr;
+        gap: 2em;
+        max-width: 100%;
+    }
+
+    #bloco2 {
+        padding: 2em 1.5em 3em;
+    }
+
+    #comida-name {
         font-size: 2em;
     }
 
-    #pizza-list {
-        grid-template-columns: 1fr;
+    #comida-image {
+        max-width: 100%;
     }
 
-    .cart-actions {
-        flex-direction: column;
-    }
-
-    .cart-actions button {
-        width: 100%;
-    }
-
-    #pizza-image {
-        width: 300px;
-        height: 300px;
+    .comida-content {
+        max-width: 100%;
     }
 }
 
 @media (max-width: 480px) {
-    #pizza-image {
-        width: 250px;
-        height: 250px;
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .header {
+        padding: 2em 1em 1.5em;
+    }
+
+    #comida-list {
+        gap: 1.5em;
+    }
+
+    .comida-card h3 {
+        font-size: 1.3em;
+    }
+
+    #comida-name {
+        font-size: 1.7em;
+    }
+
+    #comida-descricao {
+        font-size: 1em;
     }
 }
